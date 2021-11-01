@@ -7,8 +7,8 @@ import { IPresentation } from './model/presentation';
   providedIn: 'root'
 })
 export class MovieService {
-  baseURL = 'http://movieservice/api/movies';
-  baseURLPrezi = 'http://movieservice/api/presentations';
+  baseURL = 'movieservice/api/movies';
+  baseURLPrezi = 'movieservice/api/presentations';
 
   constructor(private http: HttpClient) { }
 

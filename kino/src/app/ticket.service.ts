@@ -6,7 +6,7 @@ import { ITicket } from './model/ticket';
   providedIn: 'root'
 })
 export class TicketService {
-  baseURL = 'http://ticketservice/api/tickets';
+  baseURL = 'ticketservice/api/tickets';
 
   constructor(private http: HttpClient) { }
 
