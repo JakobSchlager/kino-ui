@@ -6,6 +6,9 @@ RUN npm install
 COPY kino/. /app
 RUN npm run build --prod
 
-FROM nginx:1.20.1 
-COPY --from=build-step /app/dist/* /usr/share/nginx/html
-EXPOSE 80:80
+WORKDIR /app/dist/
+CMD ["npm","start","--proxy-config proxy.conf.json"]
+
+#FROM nginx:1.20.1 
+#COPY --from=build-step /app/dist/* /usr/share/nginx/html
+#EXPOSE 80:80
