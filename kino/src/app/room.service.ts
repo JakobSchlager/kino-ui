@@ -7,8 +7,8 @@ import { ISeat } from './model/seat';
   providedIn: 'root'
 })
 export class RoomService {
-  baseURLroom = 'http://roomservice/api/rooms';
-  baseURLseat = 'http://roomservice/api/seats';
+  baseURLroom = 'http://localhost:5001/api/rooms';
+  baseURLseat = 'http://localhost:5001/api/seats';
 
   constructor(private http: HttpClient) { }
 

@@ -6,9 +6,9 @@ RUN npm install
 COPY kino/. /app
 RUN npm run build --prod
 
-FROM nginx:alpine
-COPY --from=build-step /app/dist/* /usr/share/nginx/html
-EXPOSE 80:80
+#FROM nginx:alpine
+#COPY --from=build-step /app/dist/* /usr/share/nginx/html
+#EXPOSE 80:80
 
-#WORKDIR /app/dist/
-#CMD ["npm","start","--proxy-config proxy.conf.json"]
+WORKDIR /app/dist/
+CMD ["npm","start","--proxy-config proxy.conf.json"]
