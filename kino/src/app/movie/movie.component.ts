@@ -4,21 +4,17 @@ import { IMovie } from '../model/movie';
 @Component({
   selector: 'movie',
   templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.scss']
+  styleUrls: ['./movie.component.scss'],
 })
 export class MovieComponent implements OnInit {
-
   @Input() movie!: IMovie;
   @Output() pickedMovie = new EventEmitter<number>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  selected()
-  {
+  selected() {
     this.pickedMovie.emit(this.movie.id);
   }
-
 }

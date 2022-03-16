@@ -17,15 +17,10 @@ import { CoreModule } from './core/core.module';
     MovieComponent,
     PresentationComponent,
     SeatBookingComponent,
-    TicketVerificationComponent
+    TicketVerificationComponent,
   ],
-  imports: [
-    BrowserModule, 
-    FormsModule, 
-    HttpClientModule,  
-    CoreModule, 
-  ],
+  imports: [BrowserModule, FormsModule, HttpClientModule, CoreModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

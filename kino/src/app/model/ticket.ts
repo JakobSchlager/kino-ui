@@ -1,6 +1,6 @@
 export interface ITicket {
-    id: number, 
-    presentationId: number, 
-    seatId: number, 
-    customerName: string, 
+  id: number;
+  presentationId: number;
+  seatId: number;
+  customerName: string;
 }

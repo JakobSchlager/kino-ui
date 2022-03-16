@@ -9,7 +9,7 @@ import { ITicket } from '../model/ticket';
 @Component({
   selector: 'ticket-verification',
   templateUrl: './ticket-verification.component.html',
-  styleUrls: ['./ticket-verification.component.scss']
+  styleUrls: ['./ticket-verification.component.scss'],
 })
 export class TicketVerificationComponent implements OnInit {
   @Input() ticket!: ITicket;
@@ -18,11 +18,26 @@ export class TicketVerificationComponent implements OnInit {
   room!: IRoom;
   presentation!: IPresentation;
 
-  constructor(private movieService: MovieService, private roomService: RoomService) { }
+  constructor(
+    private movieService: MovieService,
+    private roomService: RoomService
+  ) {}
 
   ngOnInit(): void {
-    this.movieService.getSinglePresentation(this.ticket.presentationId).subscribe(x => this.movieService.getOneMovie(x.movieId).subscribe(y => this.movie = y));
-    this.movieService.getSinglePresentation(this.ticket.presentationId).subscribe(x => this.roomService.getOneRoom(x.roomId).subscribe(y => this.room = y));
-    this.movieService.getSinglePresentation(this.ticket.presentationId).subscribe(x => this.presentation = x);
+    this.movieService
+      .getSinglePresentation(this.ticket.presentationId)
+      .subscribe((x) =>
+        this.movieService
+          .getOneMovie(x.movieId)
+          .subscribe((y) => (this.movie = y))
+      );
+    this.movieService
+      .getSinglePresentation(this.ticket.presentationId)
+      .subscribe((x) =>
+        this.roomService.getOneRoom(x.roomId).subscribe((y) => (this.room = y))
+      );
+    this.movieService
+      .getSinglePresentation(this.ticket.presentationId)
+      .subscribe((x) => (this.presentation = x));
   }
 }

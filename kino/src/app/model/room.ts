@@ -1,4 +1,4 @@
 export interface IRoom {
-    id: number, 
-    description: string, 
+  id: number;
+  description: string;
 }

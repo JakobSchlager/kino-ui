@@ -1,5 +1,5 @@
 export interface ISeat {
-    id: number, 
-    roomId: number,
-    description: string, 
+  id: number;
+  roomId: number;
+  description: string;
 }
