@@ -24,7 +24,9 @@ export class SeatBookingComponent implements OnInit {
   diable: boolean = true;
   movie!: IMovie;
   presentation!: IPresentation;
-  name: string = '';
+  firstname: string = '';
+  lastname: string = '';
+  email: string = '';
   reservedSeats!: number[];
 
   constructor(
@@ -67,8 +69,12 @@ export class SeatBookingComponent implements OnInit {
   }
 
   buy() {
-    console.log(this.name.length);
-    if (this.name.length > 0) {
+    console.log(this.firstname.length);
+    if (
+      this.firstname.length > 0 &&
+      this.lastname.length > 0 &&
+      this.email.length > 0
+    ) {
       let result: ITicket[] = [];
 
       this.selectedSeats.forEach((x) =>
@@ -76,7 +82,9 @@ export class SeatBookingComponent implements OnInit {
           id: 0,
           presentationId: this.presentationId,
           seatId: x,
-          customerName: this.name,
+          customerFirstname: this.firstname,
+          customerLastname: this.lastname,
+          customerEmail: this.email,
         })
       );
 

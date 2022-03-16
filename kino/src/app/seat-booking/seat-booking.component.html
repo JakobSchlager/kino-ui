@@ -52,11 +52,27 @@
                 </span>
               </div>
               <input
-                [(ngModel)]="name"
+                [(ngModel)]="firstname"
                 type="text"
                 class="form-control"
                 placeholder="Name"
                 aria-label="Name"
+                aria-describedby="basic-addon1"
+              />
+              <input
+                [(ngModel)]="lastname"
+                type="text"
+                class="form-control"
+                placeholder="Nachname"
+                aria-label="Nachname"
+                aria-describedby="basic-addon1"
+              />
+              <input
+                [(ngModel)]="email"
+                type="text"
+                class="form-control"
+                placeholder="Email"
+                aria-label="Email"
                 aria-describedby="basic-addon1"
               />
             </div>
