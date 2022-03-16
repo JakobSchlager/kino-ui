@@ -8,10 +8,12 @@ import { MovieComponent } from './movie/movie.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { SeatBookingComponent } from './seat-booking/seat-booking.component';
 import { TicketVerificationComponent } from './ticket-verification/ticket-verification.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+
     MovieComponent,
     PresentationComponent,
     SeatBookingComponent,
@@ -21,6 +23,7 @@ import { TicketVerificationComponent } from './ticket-verification/ticket-verifi
     BrowserModule, 
     FormsModule, 
     HttpClientModule,  
+    CoreModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

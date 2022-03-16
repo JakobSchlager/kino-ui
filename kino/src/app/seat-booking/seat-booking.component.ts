@@ -1,12 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { RoomService } from '../room.service';
 import { ISeat } from '../model/seat';
-import { MovieService } from '../movie.service';
 import { IMovie } from '../model/movie';
 import { IPresentation } from '../model/presentation';
-import { IRoom } from '../model/room';
 import { ITicket } from '../model/ticket';
-import { TicketService } from '../ticket.service';
+import { RoomService } from '../core/services/room.service';
+import { MovieService } from '../core/services/movie.service';
+import { TicketService } from '../core/services/ticket.service';
 
 @Component({
   selector: 'seat-booking',
@@ -30,8 +29,6 @@ export class SeatBookingComponent implements OnInit {
   reservedSeats!: number[];
 
   constructor(private roomService: RoomService, private movieService: MovieService, private ticketService: TicketService) { }
-
- 
 
   ngOnInit(): void {
     this.ticketService.getAllSeats(this.presentationId).subscribe(x => this.reservedSeats = x);

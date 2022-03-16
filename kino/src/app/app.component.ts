@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from './core/services/movie.service';
+import { TicketService } from './core/services/ticket.service';
 import { IMovie } from './model/movie';
 import { IPresentation } from './model/presentation';
 import { ITicket } from './model/ticket';
-import { MovieService } from './movie.service';
-import { TicketService } from './ticket.service';
 
 @Component({
   selector: 'app-root',
@@ -19,11 +19,8 @@ export class AppComponent implements OnInit {
   pickedMovieId!: number;
   globalTickets: ITicket[] = [];
 
-
   constructor(private movieService: MovieService, private ticketService: TicketService)
-  {
-
-  }
+  { }
   
   ngOnInit(): void {
     this.movieService.getAllMovies().subscribe(x => this.movies = x);
@@ -61,5 +58,4 @@ export class AppComponent implements OnInit {
       this.status = percent; 
     }
   }
-  
 }
