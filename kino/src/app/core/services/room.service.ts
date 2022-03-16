@@ -4,32 +4,27 @@ import { IRoom } from 'src/app/model/room';
 import { ISeat } from 'src/app/model/seat';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RoomService {
   baseURLroom = '/api/rooms';
   baseURLseat = '/api/seats';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAllRooms()
-  {
+  getAllRooms() {
     return this.http.get<IRoom[]>(this.baseURLroom);
   }
 
-  getOneRoom(id: number)
-  {
+  getOneRoom(id: number) {
     return this.http.get<IRoom>(this.baseURLroom + '/' + id);
   }
 
-
-  getAllSeats()
-  {
+  getAllSeats() {
     return this.http.get<ISeat[]>(this.baseURLseat);
   }
 
-  getOneSeat(id: number)
-  {
+  getOneSeat(id: number) {
     return this.http.get<ISeat>(this.baseURLseat + '/' + id);
   }
 }
